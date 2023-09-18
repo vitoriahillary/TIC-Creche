@@ -49,34 +49,34 @@ export const Patrimonios = [
     },
     {
         id: "7",
-        name: "Web Design Responsivo",
-        description: "Crie sites que se adaptam a dispositivos diferentes",
-        createdAt: "11/09/2023",
-        course: "Curso de Desing",
-        staff: "prof 2"
+        name: "Cafeteira",
+        estado: "Usada",
+        data_aquisicao: "03/03/2023",
+        depto: "Cozinha",
+        categoria: "Eletrodoméstico"
     },
     {
         id: "8",
-        name: "Programação em Python",
-        description: "Domine uma das linguagens de programação mais populares",
-        createdAt: "11/09/2023",
-        course: "Curso de Python",
-        staff: "prof 5"
+        name: "Armário",
+        estado: "Novo",
+        data_aquisicao: "12/02/2023",
+        depto: "Sala de Estar",
+        categoria: "Móvel"
     },
     {
         id: "9",
-        name: "Desenvolvimento de Jogos",
-        description: "Crie seus próprios jogos emocionantes",
-        createdAt: "11/09/2023",
-        course: "Curso de Games",
-        staff: "prof 6"
+        name: "Telefone",
+        estado: "Conservado",
+        data_aquisicao: "08/01/2023",
+        depto: "Escritório",
+        categoria: "Eletrônico"
     },
     {
         id: "10",
-        name: "Administração de Bancos de Dados",
-        description: "Aprenda a gerenciar dados com eficiência",
-        createdAt: "11/09/2023",
-        course: "Curso BD",
-        staff: "prof 7"
+        name: "Máquina de Lavar",
+        estado: "Usada",
+        data_aquisicao: "20/12/2022",
+        depto: "Lavanderia",
+        categoria: "Eletrodoméstico"
     },
 ]

@@ -1,5 +1,33 @@
 'use client'
+
+import { api } from "@/services/api";
+import { FormEvent, useState } from "react";
+import toast from "react-hot-toast";
+
 export default function CadastrarPatrimonio() {
+    const [name, setName] = useState('');
+    const [estado, setEstado] = useState('');
+    const [data, setData] = useState(Date)
+    const [depto, setDepto] = useState('');
+    const [categoria, setCategoria] = useState('');
+
+    const patrimonio = {
+        name,
+        estado,
+        data,
+        depto,
+        categoria
+    }
+
+
+    const handleCadastro = (event: FormEvent) => {
+       event.preventDefault()
+
+       api.post(`/api/patrimonio`)
+           .then(() => toast.success("Account created successfully!"))
+           .catch(() => toast.error("Unable to create account, please try again!"))
+    };
+
     return (
         <>
             <div className="flex flex-col items-start bg-zinc-800 h-screen w-full">
@@ -26,7 +54,7 @@ export default function CadastrarPatrimonio() {
                         <label htmlFor="name" className="text-zinc-50 font-sm font-medium">Name:</label>
                         <div className="flex gap-3">
                             <div className="flex mx-1 w-full items-center gap-2 rounded-lg border border-zinc-100 px-3 py-2 shadow-sm bg-zinc-700" >
-                                <input className="flex-1 border-0 bg-transparent p-0 text-zinc-50 placeholder-zinc-200 border-none outline-none" id="name"/>
+                                <input className="flex-1 border-0 bg-transparent p-0 text-zinc-50 placeholder-zinc-200 border-none outline-none" id="name" onChange={(e) => setName(e.target.value)}/>
                             </div>
                         </div>
                     </div>
@@ -34,7 +62,7 @@ export default function CadastrarPatrimonio() {
                         <label htmlFor="name" className="text-zinc-50 font-sm font-medium">Data:</label>
                         <div className="flex gap-3">
                             <div className="flex mx-1 w-full items-center gap-2 rounded-lg border border-zinc-100 px-3 py-2 shadow-sm bg-zinc-700" >
-                                <input className="flex-1 border-0 bg-transparent p-0 text-zinc-50 placeholder-zinc-200 border-none outline-none" id="name"/>
+                                <input className="flex-1 border-0 bg-transparent p-0 text-zinc-50 placeholder-zinc-200 border-none outline-none" id="data" onChange={(e) => setData(e.target.value)}/>
                             </div>
                         </div>
                     </div>
@@ -42,7 +70,23 @@ export default function CadastrarPatrimonio() {
                         <label htmlFor="name" className="text-zinc-50 font-sm font-medium">Estado:</label>
                         <div className="flex gap-3">
                             <div className="flex mx-1 w-full items-center gap-2 rounded-lg border border-zinc-100 px-3 py-2 shadow-sm bg-zinc-700" >
-                                <input className="flex-1 border-0 bg-transparent p-0 text-zinc-50 placeholder-zinc-200 border-none outline-none" id="name"/>
+                                <input className="flex-1 border-0 bg-transparent p-0 text-zinc-50 placeholder-zinc-200 border-none outline-none" id="estado" onChange={(e) => setEstado(e.target.value)}/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-form gap-3 pt-5">
+                        <label htmlFor="name" className="text-zinc-50 font-sm font-medium">Departamento:</label>
+                        <div className="flex gap-3">
+                            <div className="flex mx-1 w-full items-center gap-2 rounded-lg border border-zinc-100 px-3 py-2 shadow-sm bg-zinc-700" >
+                                <input className="flex-1 border-0 bg-transparent p-0 text-zinc-50 placeholder-zinc-200 border-none outline-none" id="estado" onChange={(e) => setDepto(e.target.value)}/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-form gap-3 pt-5">
+                        <label htmlFor="name" className="text-zinc-50 font-sm font-medium">Categoria:</label>
+                        <div className="flex gap-3">
+                            <div className="flex mx-1 w-full items-center gap-2 rounded-lg border border-zinc-100 px-3 py-2 shadow-sm bg-zinc-700" >
+                                <input className="flex-1 border-0 bg-transparent p-0 text-zinc-50 placeholder-zinc-200 border-none outline-none" id="estado" onChange={(e) => setCategoria(e.target.value)}/>
                             </div>
                         </div>
                     </div>
@@ -59,7 +103,9 @@ export default function CadastrarPatrimonio() {
                                 text-sm font-semibold shadow-sm 
                                 bg-indigo-600 text-white hover:bg-indigo-700"
                             type="submit"
-                            form="formUser">
+                            form="formUser"
+                            onClick={handleCadastro}
+                        >
                             Confirmar
                         </button>
                     </div>

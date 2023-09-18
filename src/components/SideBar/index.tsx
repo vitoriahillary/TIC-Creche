@@ -7,7 +7,7 @@ export default function SideBar() {
         <div className="flex flex-col w-80 h-screen bg-zinc-800 border-r border-zinc-100 overflow-y-auto">
             <div className="px-6 pt-8">
                 <div className="flex items-center justify-between">
-                    <img src="logo.png" alt="logo" className="w-16 h-16 rounded-full mb-3" />
+                    <img src="/logo.png" alt="logo" className="w-16 h-16 rounded-full mb-3" />
                     <div className="flex flex-col">
                         <strong className="text-center font-extrabold ml-2 text-4xl mb-2"> Creche </strong>
                         <a className="font-medium text-sm">Nossa Senhora da Conceição</a>

@@ -50,7 +50,7 @@ export default function Home() {
                 <div className="flex flex-col w-3/4 justify-center mt-14 ml-32">
                     <Table.Tbl>
                         <Table.TableThead>
-                            <Table.TableTr headers={['Nome', 'Data', 'Estado']} />
+                            <Table.TableTr headers={['Nome', 'Data', 'Estado', 'Departamento', 'Categoria']} />
                         </Table.TableThead>
                         <Table.TBody>
                             {selectData.map((item, index) => (
@@ -58,9 +58,11 @@ export default function Home() {
                                     <Table.Td> {item.name} </Table.Td>
                                     <Table.Td> {item.data_aquisicao} </Table.Td>
                                     <Table.Td> {item.estado} </Table.Td>
+                                    <Table.Td> {item.depto} </Table.Td>
+                                    <Table.Td> {item.categoria} </Table.Td>
                                     <Table.Td>
                                         <div className="flex flex-row gap-3 flex-1 justify-center">
-                                            <button className="rounded p-1.5 hover:bg-zinc-600"><Pencil className="w-5 h-5 text-violet-400" /></button>
+                                            <button className="rounded p-1.5 hover:bg-zinc-600"><Pencil className="w-5 h-5 text-indigo-400" /></button>
                                             <button className="p-1.5 rounded hover:bg-zinc-600"><Trash2 className="w-5 h-5 text-red-500" /></button>
                                         </div>
                                     </Table.Td>

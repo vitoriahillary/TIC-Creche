@@ -21,8 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <div className={`${pathname != '/' && 'grid grid-cols-app'}`}>
-      {pathname != '/' && <div className="flex-col bg-zinc-800">
+      <div className={`${pathname != '/login' && 'grid grid-cols-app'}`}>
+      {pathname != '/login' && <div className="flex-col bg-zinc-800">
                 <SideBar />
             </div>}
         <main>
