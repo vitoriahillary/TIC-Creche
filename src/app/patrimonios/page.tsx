@@ -17,6 +17,10 @@ export default function Home() {
     const end = start + itemsByPage
     const selectData = Patrimonios.slice(start, end)
 
+    //handle list
+    
+    //handleRemove
+
     return (
         <>
             <div className="flex flex-col items-start bg-zinc-800 h-screen w-full">
@@ -62,7 +66,7 @@ export default function Home() {
                                     <Table.Td> {item.categoria} </Table.Td>
                                     <Table.Td>
                                         <div className="flex flex-row gap-3 flex-1 justify-center">
-                                            <button className="rounded p-1.5 hover:bg-zinc-600"><Pencil className="w-5 h-5 text-indigo-400" /></button>
+                                            <button onClick={() => window.open("/patrimonios/editar", "_self")} className="rounded p-1.5 hover:bg-zinc-600"><Pencil className="w-5 h-5 text-indigo-400" /></button>
                                             <button className="p-1.5 rounded hover:bg-zinc-600"><Trash2 className="w-5 h-5 text-red-500" /></button>
                                         </div>
                                     </Table.Td>

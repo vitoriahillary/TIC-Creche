@@ -19,10 +19,10 @@ export default function CadastrarPatrimonio() {
         categoria
     }
 
-    const handleCadastro = (event: FormEvent) => {
+    const handleEdit = (event: FormEvent) => {
        event.preventDefault()
 
-       api.post(`/api/patrimonio`, patrimonio)
+       api.put(`/api/patrimonio`, patrimonio)
            .then(() => toast.success("Account created successfully!"))
            .catch(() => toast.error("Unable to create account, please try again!"))
     };
@@ -31,7 +31,7 @@ export default function CadastrarPatrimonio() {
         <>
             <div className="flex flex-col items-start bg-zinc-800 h-screen w-full">
                 <div className="flex flex-row w-full justify-between pr-8 pt-5">
-                    <h1 className="text-zinc-100 text-3xl font-medium pl-6">Cadastrar Patrimonio</h1>
+                    <h1 className="text-zinc-100 text-3xl font-medium pl-6">Editar Patrimonio</h1>
                     <button className="rounded-lg px-4 py-2 
                         text-sm font-semibold shadow-sm 
                         bg-indigo-600 text-white hover:bg-indigo-700"
@@ -43,8 +43,8 @@ export default function CadastrarPatrimonio() {
                 <div className="mt-6 ml-6 flex flex-col">
                     <div className="flex justify-between items-center w-full border-b border-zinc-50 pb-5">
                         <div>
-                            <h1 className="text-lg text-zinc-50 font-medium">Cadastrar um novo Patrimonio</h1>
-                            <h3 className="text-sm text-zinc-300">Adicione um novo patrimonio da creche aqui</h3>
+                            <h1 className="text-lg text-zinc-50 font-medium">Atualizar ou editar um Patrimonio</h1>
+                            <h3 className="text-sm text-zinc-300">Edite um patrimonio da creche aqui</h3>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ export default function CadastrarPatrimonio() {
                                 bg-indigo-600 text-white hover:bg-indigo-700"
                             type="submit"
                             form="formUser"
-                            onClick={handleCadastro}
+                            onClick={handleEdit}
                         >
                             Confirmar
                         </button>
